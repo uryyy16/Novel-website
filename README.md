@@ -1,2 +1,2 @@
 # novel
-使用jQery-3.4.1
+使用jQuery-3.4.1
