@@ -1,0 +1,337 @@
+html,body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a{text-decoration: none;}
+
+.header{
+    height: 80px;
+    background-color: #333333;
+}
+/*.bt h{*/
+/*    font-weight: bolder;*/
+/*    font-size: 50px;*/
+/*    color: #E6E6FA;*/
+/*}*/
+.bt{
+    width:30%;
+    height: 100%;
+    float: left;
+    padding-top: 21px;
+    padding-left: 20px;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #E6E6FA;
+}
+.search{
+    padding-top: 33px;
+    margin: auto;
+    height: 50px;
+    width: 350px;
+}
+.search input{
+    border: 2px solid ;
+    height: 30px;
+    width: 300px;
+}
+.stn{
+    width: 65px;
+    height: 33px;
+    position: absolute;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    background-color: cornflowerblue;
+    top: 35px;
+}
+.content1{
+    height: 150px;
+    width: 100%;
+    background-color: #333333;
+}
+.picture{
+    width: 100%;
+    height: 130px;
+}
+.p1{
+    display: block;
+}
+.p2{
+    display: none;
+}
+.p3{
+    display: none;
+}
+.content2{
+    height: 500px;
+    width: 95%;
+    margin: 0 auto;
+}
+.phb{
+    height: 100%;
+    width: 300px;
+    background-color: #fff;
+    float: left;
+    border: 1px solid #999999;
+}
+.bookList{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #999999;
+    outline: none;
+}
+.bookNum{
+    height: 100%;
+    width: 30px;
+    font-size: 20px;
+    padding-top: 17px;
+    padding-left: 15px;
+    display: inline-block;
+    float: left;
+}
+.detail{
+    float: right;
+    margin: 18px 10px 0;
+}
+.bookName{
+    float: left;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+.line{
+    height: 43px;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding-top: 28px;
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom:1px solid #999999 ;
+}
+.dl{
+    height: 200px;
+    width: 300px;
+    background-color: white;
+    float: right;
+    text-align: center;
+    padding-top: 10px;
+    border:1px solid #999999;
+}
+.dl_in{
+    padding-top: 60px;
+}
+.dl h{
+    border: 2px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #CCCCCC;
+}
+.dl input{
+    height: 25px;
+    border-radius: 5px;
+}
+.shu{
+    float: left;
+    width: 570px;
+    height: 72px;
+    padding-left: 13px;
+}
+.shu>button{
+    height: 72px;
+    width: 570px;
+    background-color: white;
+    outline: none;
+    font-size: medium;
+}
+.sort{
+    float: left;
+    height: 420px;
+    width: 300px;
+    text-align: center;
+    border-bottom: 1px solid #999999;
+    padding-left: 13px;
+    padding-top: 13px;
+}
+/*.sort .left b1+.right b1+.left b3+.right b3 {*/
+/*    background-color: #01658f;*/
+/*}*/
+.sort .left{
+    float: left;
+    width: 50%;
+    height: 60px;
+    background-color: #f7f6f2;
+    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #ccc;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.sort .right{
+    float: right;
+    width: 50%;
+    height: 60px;
+    background-color: #fcfcfa;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.sort p{
+    padding-top: 23px;
+    user-select: none;
+}
+.sort ul li:hover{
+    color: #999999;
+}
+.tu{
+    height: 128px;
+    width: 250px;
+    background-color: red;
+    float: right;
+    margin-top: 13px;
+    margin-right: 13px;
+}
+.tu img{
+    height: 128px;
+    width: 250px;
+}
+.none{
+    float: right;
+    margin-top: 13px;
+    height: 277px;
+    width: 564px;
+    border: 1px solid #ccc;
+}
+.face_image {
+    float: left;
+    width: 144px;
+    height: 190px;
+    margin: 13px 13px 0;
+}
+.face_image img{
+    height: 190px;
+    width: 144px;
+}
+.face_info{
+    float: right;
+    margin-top: 13px;
+    height: 190px;
+    width: 360px;
+    line-height: 30px;
+    user-select: none;
+}
+.face_info span{
+    font-size: 12px;
+}
+.face_info p{
+    padding-top: 20px;
+}
+.snr{
+    height: 430px;
+    width: 570px;
+    background-color: white;
+    margin-left: 313px;
+    margin-top: 85px;
+    display: none;
+    position: absolute;
+    border: 1px solid #999999;
+}
+.snr .list{
+    height: 60px;
+    width: 100%;
+}
+.list_name{
+    display: inline-block;
+}
+.list_name span{
+    line-height: 60px;
+    margin-left: 30px;
+    user-select: none;
+}
+.list_start{
+    float: right;
+    margin-top: 21px;
+}
+.list_del{
+    width: 100px;
+    height: 100%;
+    float: right;
+    text-align: center;
+    line-height: 45px;
+}
+
+.list_start button{
+     background-color: #FFFFFF;
+    outline: none;
+    border: none;
+    opacity: 0.5;
+}
+.list_start button:hover{
+    opacity: 1;
+}
+.list_del i{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    margin-top: 12px;
+    /*vertical-align: -3px;*/
+}
+.list_del i img{
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+}
+.list_del i img:hover{
+    opacity: 1;
+}
+.snr>ul>li{
+     border-bottom: 1px solid #CCCCCC;
+}
+#c{
+    height: 12px;
+}
+.check{
+    float: left;
+    padding-left: 42px;
+    color: #999999;
+    font-size: 10px;
+}
+.de{
+    color: black;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(#666,#999);
+    outline: none;
+}
+.de:hover{
+    color:#666666;
+}
+.zc{
+    padding-top: 10px;
+    float: right;
+    font-size: 14px;
+}
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color: #ccc;
+    margin-top: 13px;
+    text-align: center;
+    line-height: 45px;
+}
+

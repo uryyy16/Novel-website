@@ -1,0 +1,43 @@
+body{
+    background-color: #999999;
+}
+.middle{
+    width: 800px;
+    height: 1000px;
+    margin: 120px auto;
+    background-color: white;
+}
+.image{
+    float: left;
+    width: 144px;
+    height: 190px;
+    margin: 20px 20px 0;
+    background-color: #01658f;
+}
+.image img{
+    height: 190px;
+    width: 144px;
+}
+.info{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: #01658f;
+    height: 190px;
+    width: 580px;
+    line-height: 30px;
+    user-select: none;
+}
+.face_info span{
+    font-size: 12px;
+}
+.face_info p{
+    padding-top: 20px;
+}
+.in{
+    outline: none;
+    float: right;
+    margin-right: 30px;
+    color: #FFFFFF;
+    background-color: #999999;
+}
