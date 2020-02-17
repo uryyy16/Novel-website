@@ -38,8 +38,8 @@ $(function () {
         var $userName = $(".user").val();
         var $password = $(".re_password").val();
         $.ajax({
-            type :"",
-            url:"",
+            type :"post",
+            url:"file:///D:/project/src/book_web/controllers/register",
             data:$userName+$password,
             success :function () {
                 alert("注册成功");
@@ -57,6 +57,7 @@ $(function () {
         $ajax({
             type:"POST",
             async:true,
+            url:"file:///D:/project/src/book_web/controllers/register"
             data: $userName+$password,
             success : function () {
             //获取书架信息
@@ -122,7 +123,7 @@ $(function () {
             type:"get",
             url:"http://localhost/book/intro",
             data:$obj.id,
-            success: function (obj){
+            success: function (value){
             var $information = $("<div class=\"image\"><img src="+value.Book_pic+" alt=\"\"></div>\n" +
             "         <div class=\"info\">\n" +
             "             <h3>"+value.Book_name+"</h3>\n" +
