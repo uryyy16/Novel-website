@@ -39,7 +39,7 @@ $(function () {
         var $password = $(".re_password").val();
         $.ajax({
             type :"post",
-            url:"file:///D:/project/src/book_web/controllers/register",
+            url:"http://localhost/user/register",
             data:$userName+$password,
             success :function () {
                 alert("注册成功");
@@ -57,7 +57,7 @@ $(function () {
         $ajax({
             type:"POST",
             async:true,
-            url:"file:///D:/project/src/book_web/controllers/register"
+            url:"http://localhost/user/login"
             data: $userName+$password,
             success : function () {
             //获取书架信息
