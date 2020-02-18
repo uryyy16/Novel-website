@@ -65,9 +65,10 @@ $(function () {
     //监听页码点击
     $(".content2").delegate(".page>a","click",function () {
         var $pageClick = $(this).val();
-        $(".cur").css("color","#5590dc");
+        // $(".cur").css("color","#5590dc");
         $(this).addClass("cu");
         $(".cu").css("color","red");
+        $(this).siblings().css("color","#5590dc");
         getPHB($pageClick);
         })
     //搜索功能实现
