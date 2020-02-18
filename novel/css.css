@@ -21,11 +21,6 @@ a{text-decoration: none;}
     height: 80px;
     background-color: #333333;
 }
-/*.bt h{*/
-/*    font-weight: bolder;*/
-/*    font-size: 50px;*/
-/*    color: #E6E6FA;*/
-/*}*/
 .bt{
     width:30%;
     height: 100%;
@@ -177,9 +172,6 @@ a{text-decoration: none;}
     padding-left: 13px;
     padding-top: 13px;
 }
-/*.sort .left b1+.right b1+.left b3+.right b3 {*/
-/*    background-color: #01658f;*/
-/*}*/
 .sort .left{
     float: left;
     width: 50%;
