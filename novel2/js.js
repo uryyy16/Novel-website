@@ -1,5 +1,6 @@
 var judgeid = 0;
 var judgeClick = 0;
+var haveLogin = 0;
 $(function () {
     var $swap = 0;
     $(".shun").click(function () {
@@ -251,10 +252,11 @@ $(function () {
          }
     })
     //登录功能实现
+    var a = 1;
     $(".de").click(function () {
         var $userName = $(this).parents(".dl").find(".lo_username").val();
         var $password = $(this).parents(".dl").find(".lo_password").val();
-        var $obj = $(this).parents(".lo_username").get(0).object;
+        var $obj = $(this).parents(".dl").find(".lo_username").get(0).object;
         var datas = {user_id:$userName,pwd:$password,id:$obj.id};
         var data = JSON.stringify(datas);
         if($userName.length == 0||$password.length == 0)
@@ -275,37 +277,42 @@ $(function () {
                         alert("账号或密码错误");
                     }
                     else{
+                        haveLogin = 1;
+                        var i = a;
                         getBookList($obj.id);
                         var $but = $("<button class=\"clear\">退出登录</button>");
                         $(".header").prepend($but);
-                        if(!window.localStorage){
-                            alert("浏览器不支持localstorage");
-                            return false;
-                        }else{
-                            if($(".zidong").is(":checked")){
-                                localStorage.setItem('user',JSON.stringify($userName));
-                                localStorage.setItem('pwd',JSON.stringify($password));
-                                var use = localStorage.getItem('user');
-                                var pwd = localStorage.getItem('pwd');
-                                if(use&&(!pwd)){
-                                    $(".lo_password").val = JSON.stringify(pwd);
-                                }
-                            }
-                        }
-                        // var date = new Date();
-                        // date.setDate(date.getDate() + 0.01);
-                        // document.cookie = "userName="+$userName+";expires="+date.toGMTString()+";";
-                        // document.cookie = "password="+$password+";expires="+date.toGMTString()+";";
-                        // //获取cookie
-                        // var res = document.cookie.split(";");
-                        // for(var i = 0;i < res.length; i++){
-                        //     var temp = res[i].split("=");
-                        //     if(temp[0].trim() === $userName){
-                        //         if($password.length == 0){
-                        //             $(".lo_password").val = temp[3];
+                        // if(!window.localStorage){
+                        //     alert("浏览器不支持localstorage");
+                        //     return false;
+                        // }else{
+                        //     if($(".zidong").is(":checked")){
+                        //         localStorage.setItem('user',JSON.stringify($userName));
+                        //         localStorage.setItem('pwd',JSON.stringify($password));
+                        //         var use = localStorage.getItem('user');
+                        //         var pwd = localStorage.getItem('pwd');
+                        //         if(use&&(!pwd)){
+                        //             $(".lo_password").val = JSON.stringify(pwd);
                         //         }
                         //     }
                         // }
+                        var date = new Date();
+                        date.setDate(date.getDate() + 1);
+                        document.cookie = "userName"+i+"="+$userName+";expires="+date.toGMTString()+";";
+                        document.cookie = "password"+i+"="+$password+";expires="+date.toGMTString()+";";
+                        a++;
+                        //获取cookie
+                        var res = document.cookie.split(";");
+                        for(var i = 0;i < res.length; i++){
+                            var temp = res[i].split("=");
+                            if(temp[1].trim() === $userName){
+                                var j = i+1;
+                                temp = res[j].split("=");
+                                if($password.length == 0){
+                                    $(".lo_password").val = temp[1];
+                                }
+                            }
+                        }
                     }
                     if(gly == 2){
                         judgeid = 1;
@@ -320,10 +327,7 @@ $(function () {
     //退出登录
     $(".header").delegate(".but","click",function () {
         $(".snr").remove();
-        $(".in").on('click', function(event) {
-            alert("请先登录！");
-            event.preventDefault();
-        });
+        haveLogin = 0;
     })
     //获取书架信息
     function getBookList(userId){
@@ -426,27 +430,32 @@ $(function () {
         var $use = $(this).parents(".content2").find(".lo_username").get(0).object;
         var datas = {id:$obj.id,user_id:$use.id};
         var data = JSON.stringify(datas);
-         $.ajax({
-             type:"post",
-              url:"http://localhost/user/insert",
-              data:data,
-             success: function (obj) {
-               //  var obj = eval("("+msg+")");
-                  var msg = JSON.parse(obj);
-              //创建节点
-             var $newBook = $("<li><div class=\"list\">\n" +
-            "                <div class=\"list_name\"><span>"+msg.book_name+"</span></div>\n" +
-            "                <div class=\"list_del\"><i><img src=\"images/image/shanchu.jpg\" alt=\"\"></i></div>\n" +
-            "                <div class=\"list_start\"><button >查看详情</button></div>\n" +
-            "            </div></li>");
-              //插入节点
-             var $newList = $(".snr ul");
-             $newList.prepend($newBook);
+        if(haveLogin == 0){
+            alert("请先登录！");
+        }else{
+            $.ajax({
+                type:"post",
+                url:"http://localhost/user/insert",
+                data:data,
+                success: function (obj) {
+                    //  var obj = eval("("+msg+")");
+                    var msg = JSON.parse(obj);
+                    //创建节点
+                    var $newBook = $("<li><div class=\"list\">\n" +
+                        "                <div class=\"list_name\"><span>"+msg.book_name+"</span></div>\n" +
+                        "                <div class=\"list_del\"><i><img src=\"images/image/shanchu.jpg\" alt=\"\"></i></div>\n" +
+                        "                <div class=\"list_start\"><button >查看详情</button></div>\n" +
+                        "            </div></li>");
+                    //插入节点
+                    var $newList = $(".snr ul");
+                    $newList.prepend($newBook);
 
-             },
-             error: function (xhr) {
-                 alert(xhr.status);
-            }
-        })
+                },
+                error: function (xhr) {
+                    alert(xhr.status);
+                }
+            })
+        }
+
     })
 })
