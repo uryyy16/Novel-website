@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小说网</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="js.js"></script>
+    <script>
+        var index=0;
+        function Change() {
+            index++;
+            var a=document.getElementsByClassName("picture");
+            if(index==a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        }
+        setInterval(Change,2000);
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="bt">
+        小说网
+    </div>
+   <div class="search">
+       <form action="">
+           <input type="text" class="seText"><button class="stn" > 搜索 </button>
+       </form>
+   </div>
+<!--<button class="clear">退出登录</button>-->
+</div>
+<div class="content1">
+    <img src="images\image\img1.jpg" alt="1" class="picture p1">
+    <img src="images\image\img2.jpg" alt="2" class="picture p2">
+    <img src="images\image\img3.jpg" alt="3" class="picture p3">
+</div>
+<div class="content2">
+    <div class="phb">
+        <div class="line">
+            排行榜
+        </div>
+        <div class="pai">
+            <ul>
+<!--                <li>-->
+<!--                    <div class="bookList">-->
+<!--                        <div class="bookNum">1</div>-->
+<!--                        <div class="bookName">霸道总裁爱上我</div>-->
+<!--                        <div class="list_start">-->
+<!--                            <form action="http://localhost/book/intro" method="get"><button name="detail">查看详情</button></form></div>-->
+<!--                    </div>-->
+<!--                </li>-->
+            </ul>
+        </div>
+        <div class="page">
+            <a href="javascript:;">2</a>
+            <a href="javascript:;" class="cur">1</a>
+        </div>
+    </div>
+    <div class="dl">
+        <ul>
+            <li>
+                <form action="http://localhost/user/login" method="POST">
+                账号：<input type="text" placeholder="用户名" name="username" class="lo_username">
+                </form>
+            </li>
+            <br>
+            <li>
+                <form action="http://localhost/user/login" method="POST">
+                密码： <input type="password" name="lo_password" class="lo_password">
+                </form>
+            </li>
+            <li>
+                <div class="check">
+                    <form action="">
+                        <input id="c"  type="checkbox" checked="checked" name="zidong" class="zidong"> 免密登录
+                    </form>
+                </div>
+            </li>
+        </ul>
+        <div class="dl_in">
+        <button class="de" name="login">登录</button>
+        </div>
+        <div class="zc">
+            <h1>
+                <a href="http://localhost:63342/untitled1/novel/register/registerIndex.html">注册</a>
+            </h1>
+        </div>
+    </div>
+    <div class="shu">
+        <button class="shun">我的书架</button>
+    </div>
+    <div class="sort">
+        <ul>
+            <li class="left b1"><p>玄幻</p></li>
+            <li class="right b1"><p>历史</p></li>
+            <li class="left b2"><p>灵异</p></li>
+            <li class="right b2"><p>仙侠</p></li>
+            <li class="left b3"><p>都市</p></li>
+            <li class="right b3"><p>体育</p></li>
+<!--            <li class="left b4"><p>军事</p></li>-->
+<!--            <li class="right b4"><p>历史</p></li>-->
+<!--            <li class="left b5"><p>游戏</p></li>-->
+<!--            <li class="right b5"><p>体育</p></li>-->
+<!--            <li class="left b6"><p>科幻</p></li>-->
+<!--            <li class="right b6"><p>悬疑</p></li>-->
+<!--            <li class="left b7"><p>女生网</p></li>-->
+<!--            <li class="right b7"><p>轻小说</p></li>-->
+        </ul>
+    </div>
+    <div class="tu">
+        <a href="javascript: ;"><img src="images\image\jubao.png" alt=""></a>
+
+    </div>
+    <div class="none">
+        <div class="face_image"><a href="javascript: ;"><img src="images/image/90.jpg" alt=""></a></div>
+        <div class="face_info">
+            <h3>第一序列</h3>
+            <span>作者：<a href="javascript: ;">会说话的肘子</a></span>
+            <p>有人说，当灾难降临时，精神意志才是人类面对危险的第一序列武器。</p>
+            </div>
+    </div>
+    <div class="snr">
+<!--        <ul><li><div class=list><div class='list_name'><span>霸道总裁爱上我</span></div>-->
+<!--            <div class='list_del'><i><img src='images/image/shanchu.jpg'alt=''></i></div>-->
+<!--            <div class='list_start'>-->
+<!--                <form action="http://localhost/book/intro" method="get"><button>查看详情</button></form></div>-->
+<!--        </div></li>-->
+        </ul>
+    </div>
+</div>
+<div class="footer">
+    <a href="javascript: ;">|关于网站|</a>
+    <a href="javascript: ;">|法律声明|</a>
+    <p>作者发布小说作品时，请遵守国家互联网信息管理办法规定。
+        本站所收录小说作品、社区话题、书库评论均属其个人行为，不代表本站立场。</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.box1{
+    height: 80px;
+    width: 30%;
+    padding-left: 50px;
+}
+.box2{
+    height: 400px;
+    width: 500px;
+    margin-top: 20px;
+    margin-left:30%;
+    border: 2px solid black;
+}
+.box3{
+    margin: 70px auto;
+    width: 55%;
+
+}
+.btn{
+    margin: 70px 60px;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(#666,#999);
+    outline: none;
+}
+.btn:hover{
+    color:#666666;
+}
