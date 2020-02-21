@@ -167,7 +167,7 @@ $(function () {
     $(".btn").click(function () {
         var $userName = $(this).parents(".box3").find(".user").val();
         var $password = $(this).parents(".box3").find(".re_password").val();
-        var datas = {select: $('input[type = radio][name = n]:checked').val(),name: $(".user").val(),pwd:$(".re_password").val()};
+        var datas = {name: $(".user").val(),pwd:$(".re_password").val()};
         var data = JSON.stringify(datas);
         if($userName.length == 0||$password.length == 0)
         {
@@ -257,7 +257,7 @@ $(function () {
         var $userName = $(this).parents(".dl").find(".lo_username").val();
         var $password = $(this).parents(".dl").find(".lo_password").val();
         var $obj = $(this).parents(".dl").find(".lo_username").get(0).object;
-        var datas = {user_id:$userName,pwd:$password,id:$obj.id};
+        var datas = {select: $('input[type = radio][name = n]:checked').val(),user_id:$userName,pwd:$password,id:$obj.id};
         var data = JSON.stringify(datas);
         if($userName.length == 0||$password.length == 0)
         {
